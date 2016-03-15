@@ -15,7 +15,7 @@ function [gamma, Pd, Pf, Risk] = Athens_core(P0, P1, C, gammaOffset, precomputed
     m = sqrt(S);
     d = m * sqrt(N) / sigma;
 
-    if precomputedGamma ~= 0
+    if precomputedGamma == 0
         eta = (P0 * (C10 - C00)) / (P1 * (C01-C11));
         gamma = log(eta) / d + d / 2;
         gamma = gamma + gammaOffset;

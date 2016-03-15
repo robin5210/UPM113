@@ -3,5 +3,5 @@ p0 = flip(p1);
 C = [0, 3; 2, 0];
 
 for i = 1:11
-    Athens_core(p0(i), p1(i), C, 0);
+    Athens_core(p0(i), p1(i), C, 0, 0);
 end
