@@ -1,6 +1,6 @@
 function [gamma, Pd, Pf, Risk] = Athens_core(P0, P1, C, gammaOffset, precomputedGamma)
     % Constants
-    k = 1.38064852 * 10^-23;
+    k = 1.38064852 * 10^-23; % Constant of Boltzman
     Te = 11000; % in K
     Beq = 1*10^6; % in Hz
     N = 6;
