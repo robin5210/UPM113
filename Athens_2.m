@@ -34,3 +34,14 @@ for i = 1:numel(d_all)
     [P0, P1] = Athens_exercise2_4(lambda_all(i), d_all(i), C);
     fprintf('%1.4f\t%1.4f\n', P1, P0)
 end
+
+%% Exercise 5
+
+P0s = [.9874, .9985, .9998, 1];
+P1s = 1 - P0s;
+
+for i = 1:numel(d_all)
+    C = [0, 3; 2, 0];
+    [gamma, Pd, Pf, Risk] = Athens_exercise2_3(d_all(i), P0s(i), P1s(i), C);
+    fprintf('%1.4f\t%1.4f\t%1.4f\t%1.4f\n', gamma, Pd, Pf, Risk)
+end
