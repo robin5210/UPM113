@@ -20,8 +20,9 @@ function [gamma, Pd, Pf, Risk] = Athens_core(P0, P1, C, gammaOffset, precomputed
         gamma = log(eta) / d + d / 2;
         gamma = gamma + gammaOffset;
     else
-        gamma = precomputedGamma
+        gamma = precomputedGamma;
     end
+    
     % We can give lambda any value we want, but if we make it gamma then it is
     % the optimal value.
     lambda = gamma;
@@ -32,5 +33,5 @@ function [gamma, Pd, Pf, Risk] = Athens_core(P0, P1, C, gammaOffset, precomputed
     % Risk
     Pn = 1 - Pf;
     Pm = 1 - Pd;
-    Risk = P0 * C00 * Pn + P0 * C10 * Pf + P1 * C01 * Pm + P1 * C11 * Pd;
+    Risk = P0 * C00 * Pn   +   P0 * C10 * Pf   +   P1 * C01 * Pm   +   P1 * C11 * Pd;
 end
